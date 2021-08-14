@@ -1,1 +1,18 @@
+{% extends 'base.html' %}
 
+{% block content %}
+
+<h5>Edit Feedback</h5>
+
+<form method="POST" action="/feedback/{{feedback.id}}/update">
+{{form.hidden_tag()}}
+
+{% for field in form.errors %}
+	<div class="alert alert-danger"> {{field}}:
+		<ul>
+			{% for error in form.errors[field] %}
+				<li>{{error}}</li>
+		</ul>
+
+	</div>
+</form>
