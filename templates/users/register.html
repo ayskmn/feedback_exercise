@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
+<h3>Signup</h3>
 
-<h5>Login</h5>
 <form method="POST">
 	{{form.hidden_tag()}}
 
@@ -17,13 +17,14 @@
 
 	{% for field in form if field.widget.input_type != 'hidden' %}
 	<div class="form-group row">
-		{{field.label(class="col-sm2 col-form-label")}}
+		{{field.label(class="col-sm-2 col-form-label")}}
 		<div class="col-sm-10">
 			{{field(class="form-control")}}
 		</div>
 	</div>
 	{% endfor %}
-	<button class="btn btn-priamry">Login</button>
+
+	<button class="btn btn-primary">Sign Up</button>
 </form>
- 
+
 {% endblock %}
